@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamil Techies Co | Freelance Software Engineer & Data Analyst</title>
+    <title>Tamil Techies Co | Freelance Software Engineers & Data Analysts</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -417,9 +417,86 @@
             transition: var(--transition);
         }
 
+        /* Team Section */
+        .team {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .member-img {
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member-img:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .member-content {
+            padding: 25px;
+        }
+
+        .member-content h3 {
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .member-skills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: var(--gray-light);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--dark);
+        }
+
         /* Portfolio Section */
         .portfolio {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            background: var(--light);
         }
 
         .portfolio-grid {
@@ -500,52 +577,23 @@
             color: var(--darker);
         }
 
-        .skills {
-            margin-top: 30px;
-        }
-
-        .skill {
-            margin-bottom: 25px;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-
-        .skill-bar {
-            height: 8px;
-            background: #e2e8f0;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .skill-level {
-            height: 100%;
-            background: var(--gradient);
-            border-radius: 4px;
-            width: 0;
-            transition: width 1.5s ease-in-out;
-        }
-
         .about-image {
             position: relative;
             display: flex;
             justify-content: center;
         }
 
-        .profile-card {
+        .team-stats {
             background: white;
             padding: 30px;
             border-radius: 16px;
             box-shadow: var(--shadow-lg);
-            max-width: 350px;
+            max-width: 400px;
             position: relative;
             z-index: 2;
         }
 
-        .profile-image {
+        .team-logo {
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -556,12 +604,6 @@
             justify-content: center;
             color: white;
             font-size: 3rem;
-        }
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures image fills circle perfectly */
-            border-radius: 50%;
         }
 
         .stats {
@@ -583,6 +625,46 @@
         .stat-text {
             font-size: 0.9rem;
             color: var(--gray);
+        }
+
+        /* CAD Software Section */
+        .cad-software {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .software-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .software-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .software-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .software-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .software-card p {
+            font-size: 0.9rem;
         }
 
         /* Contact Section */
@@ -857,12 +939,11 @@
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="engineering.html">Engineering</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#cad">CAD Software</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-
-
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -878,11 +959,11 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text slide-in-left">
-                    <h1>Transforming Ideas Into <span>Digital Solutions</span></h1>
-                    <p>Freelance Software Engineer & Data Analyst specializing in Custom Web/Mobile Apps, Automation, and Data Insights for Businesses.</p>
+                    <h1>Friends Building <span>Digital Solutions</span> Together</h1>
+                    <p>We're Tamil Techies Co - a group of passionate friends starting our freelancing journey. We specialize in custom software development, data analysis, and engineering design.</p>
                     <div class="hero-btns">
                         <a href="#portfolio" class="btn">
-                            <i class="fas fa-eye"></i> View My Work
+                            <i class="fas fa-eye"></i> View Our Work
                         </a>
                         <a href="#contact" class="btn btn-outline">
                             <i class="fas fa-paper-plane"></i> Get In Touch
@@ -902,11 +983,11 @@
 
                     <div class="floating-card">
                         <div class="card-icon orange">
-                            <i class="fas fa-robot"></i>
+                            <i class="fas fa-cube"></i>
                         </div>
                         <div>
-                            <h4>Automation</h4>
-                            <p>Efficient Workflows</p>
+                            <h4>CAD Design</h4>
+                            <p>3D Modeling</p>
                         </div>
                     </div>
                     <div class="floating-card">
@@ -919,7 +1000,7 @@
                         </div>
                     </div>
                     <div style="width: 100%; height: 400px; background: var(--gradient); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-users"></i>
                     </div>
                 </div>
             </div>
@@ -930,7 +1011,7 @@
     <section class="section" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>My Services</h2>
+                <h2>Our Services</h2>
             </div>
             <div class="services-grid">
                 <div class="service-card fade-in">
@@ -949,6 +1030,13 @@
                 </div>
                 <div class="service-card fade-in">
                     <div class="service-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Engineering Design</h3>
+                    <p>Creating innovative engineering designs and prototypes using advanced CAD software including NX 12, Creo, SolidWorks, and CATIA V5.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>Process Automation</h3>
@@ -958,11 +1046,121 @@
         </div>
     </section>
 
+    <!-- Team Section -->
+    <section class="section team" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member fade-in">
+                    <div class="member-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-content">
+                        <h3>Team Member 1</h3>
+                        <div class="member-role">Software Engineer</div>
+                        <p>Specializes in full-stack web development with expertise in React, Node.js, and cloud technologies.</p>
+                        <div class="member-skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-content">
+                        <h3>Team Member 2</h3>
+                        <div class="member-role">Data Analyst</div>
+                        <p>Expert in data analysis, visualization, and creating actionable insights from complex datasets.</p>
+                        <div class="member-skills">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Tableau</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-content">
+                        <h3>Team Member 3</h3>
+                        <div class="member-role">Engineering Designer</div>
+                        <p>Specializes in CAD design, 3D modeling, and engineering solutions using industry-standard tools.</p>
+                        <div class="member-skills">
+                            <span class="skill-tag">NX 12</span>
+                            <span class="skill-tag">Creo</span>
+                            <span class="skill-tag">SolidWorks</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member fade-in">
+                    <div class="member-img">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-content">
+                        <h3>Team Member 4</h3>
+                        <div class="member-role">Full-Stack Developer</div>
+                        <p>Expert in both frontend and backend development with a focus on creating seamless user experiences.</p>
+                        <div class="member-skills">
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAD Software Section -->
+    <section class="section cad-software" id="cad">
+        <div class="container">
+            <div class="section-title">
+                <h2>CAD Software Expertise</h2>
+            </div>
+            <div class="software-grid">
+                <div class="software-card fade-in">
+                    <div class="software-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>NX 12</h3>
+                    <p>Advanced modeling and drafting with Siemens NX 12 for complex engineering designs and simulations.</p>
+                </div>
+                <div class="software-card fade-in">
+                    <div class="software-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Creo</h3>
+                    <p>Parametric modeling, surfacing, assembly design, and detailed drawing creation with PTC Creo.</p>
+                </div>
+                <div class="software-card fade-in">
+                    <div class="software-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>SolidWorks</h3>
+                    <p>Comprehensive 3D CAD modeling and drafting solutions for product design and engineering.</p>
+                </div>
+                <div class="software-card fade-in">
+                    <div class="software-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>CATIA V5</h3>
+                    <p>Multi-platform CAD/CAM/CAE software for product design, analysis, and manufacturing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section class="section portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
-                <h2>My Work</h2>
+                <h2>Our Work</h2>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item fade-in">
@@ -976,6 +1174,20 @@
                             <span class="tag">React</span>
                             <span class="tag">D3.js</span>
                             <span class="tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in">
+                    <div class="portfolio-img">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Industrial Component Design</h3>
+                        <p>Complex 3D modeling and drafting of mechanical components using NX 12 with detailed engineering drawings.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">NX 12</span>
+                            <span class="tag">3D Modeling</span>
+                            <span class="tag">Drafting</span>
                         </div>
                     </div>
                 </div>
@@ -995,15 +1207,15 @@
                 </div>
                 <div class="portfolio-item fade-in">
                     <div class="portfolio-img">
-                        <i class="fas fa-boxes"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
                     <div class="portfolio-content">
-                        <h3>Inventory Management App</h3>
-                        <p>Web/Mobile application for tracking inventory, orders, and suppliers with real-time notifications and analytics.</p>
+                        <h3>Product Assembly Design</h3>
+                        <p>Complete assembly modeling and surfacing work for consumer product using Creo parametric design.</p>
                         <div class="portfolio-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">Chart.js</span>
+                            <span class="tag">Creo</span>
+                            <span class="tag">Assembly</span>
+                            <span class="tag">Surfacing</span>
                         </div>
                     </div>
                 </div>
@@ -1015,62 +1227,34 @@
     <section class="section" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About Me</h2>
+                <h2>About Us</h2>
             </div>
             <div class="about-content">
                 <div class="about-text slide-in-left">
-                    <h2>Hi, I'm the founder of Tamil Techies Co</h2>
-                    <p>I'm a passionate software engineer and data analyst with over 5 years of experience helping businesses leverage technology to solve complex problems and drive growth.</p>
-                    <p>My expertise spans full-stack web/mobile development, data analysis, and process automation. I specialize in creating custom solutions that are not only functional but also scalable and maintainable.</p>
-                    <div class="skills">
-                        <div class="skill">
-                            <div class="skill-name">
-                                <span>Web/Mobile Development</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill-name">
-                                <span>Data Analysis</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <div class="skill-name">
-                                <span>Process Automation</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-width="85"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <h2>We're Tamil Techies Co</h2>
+                    <p>We're a group of friends who share a passion for technology and problem-solving. After working on various projects together during our studies, we decided to formalize our collaboration and start Tamil Techies Co.</p>
+                    <p>Our diverse skill sets in software development, data analysis, and engineering design allow us to tackle a wide range of challenges. We believe in the power of collaboration and bringing different perspectives to every project.</p>
+                    <p>As we're just starting our freelancing journey, we're excited to work with clients who value quality, innovation, and the personal touch that comes from a small, dedicated team.</p>
                 </div>
                 <div class="about-image slide-in-right">
-                    <div class="profile-card">
-                        <div class="profile-image">
-                            <img src="ttc-logo.png" alt="Profile Image" />
+                    <div class="team-stats">
+                        <div class="team-logo">
+                            <i class="fas fa-users"></i>
                         </div>
                         <h3>Tamil Techies Co</h3>
-                        <p>Freelance Software Engineer & Data Analyst</p>
+                        <p>A group of friends building digital solutions together</p>
                         <div class="stats">
                             <div class="stat">
-                                <div class="stat-number">50+</div>
-                                <div class="stat-text">Projects</div>
+                                <div class="stat-number">4</div>
+                                <div class="stat-text">Team Members</div>
                             </div>
                             <div class="stat">
-                                <div class="stat-number">5+</div>
-                                <div class="stat-text">Years</div>
+                                <div class="stat-number">Just</div>
+                                <div class="stat-text">Starting</div>
                             </div>
                             <div class="stat">
                                 <div class="stat-number">100%</div>
-                                <div class="stat-text">Satisfaction</div>
+                                <div class="stat-text">Passionate</div>
                             </div>
                         </div>
                     </div>
@@ -1088,7 +1272,7 @@
             <div class="contact-content">
                 <div class="contact-info slide-in-left">
                     <h3>Let's discuss your project</h3>
-                    <p>I'm always interested in new challenges and opportunities. Whether you need a custom web/mobile application, data analysis, or process automation, I'd love to hear about your project.</p>
+                    <p>We're excited to take on new challenges and help bring your ideas to life. Whether you need a custom application, data analysis, CAD design, or process automation, we'd love to hear about your project.</p>
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -1098,15 +1282,6 @@
                             <p>tamiltechiesco@gmail.com</p>
                         </div>
                     </div>
-                    <!-- <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 00000 00000</p>
-                        </div>
-                    </div> -->
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -1150,7 +1325,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">Tamil Techies Co</div>
-                    <p>Freelance Software Engineer & Data Analyst specializing in custom web/mobile applications, automation, and data insights.</p>
+                    <p>A group of friends building digital solutions together. We specialize in custom web/mobile applications, automation, CAD design, and data insights.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
@@ -1163,6 +1338,8 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#cad">CAD Software</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -1173,8 +1350,8 @@
                     <ul>
                         <li><a href="#">Web/Mobile Applications</a></li>
                         <li><a href="#">Data Analysis</a></li>
+                        <li><a href="#">CAD Engineering Design</a></li>
                         <li><a href="#">Process Automation</a></li>
-                        <li><a href="#">Consulting</a></li>
                     </ul>
                 </div>
             </div>
@@ -1215,7 +1392,7 @@
         // Form Submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
+            alert('Thank you for your message! We will get back to you soon.');
             this.reset();
         });
 
@@ -1229,16 +1406,6 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    
-                    // Animate skill bars
-                    if (entry.target.classList.contains('about-text')) {
-                        document.querySelectorAll('.skill-level').forEach(skill => {
-                            const width = skill.getAttribute('data-width');
-                            setTimeout(() => {
-                                skill.style.width = width + '%';
-                            }, 300);
-                        });
-                    }
                 }
             });
         }, observerOptions);
